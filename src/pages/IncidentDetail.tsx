@@ -207,7 +207,7 @@ const IncidentDetail = () => {
 
         <div className="text-center py-4">
           <p className="text-[10px] text-muted-foreground font-mono">
-            LPISTH FIRE COMMAND — INCIDENT {incident.id} — SECURE CHANNEL
+            LESOTHO NATIONAL FIRE COMMAND — INCIDENT {incident.id} — SECURE CHANNEL
           </p>
         </div>
       </main>
