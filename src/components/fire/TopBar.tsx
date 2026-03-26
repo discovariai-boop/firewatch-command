@@ -1,42 +1,56 @@
 import { Flame, Bell, Shield, Radio, User } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+
+const navItems = [
+  { label: "Overview", path: "/" },
+  { label: "Incidents", path: "/incidents" },
+  { label: "Resources", path: "/resources" },
+  { label: "Intelligence", path: "/intelligence" },
+  { label: "Coordination", path: "/coordination" },
+  { label: "Analysis", path: "/analysis" },
+];
 
 const TopBar = () => {
+  const location = useLocation();
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className="glass-card flex items-center justify-between px-6 py-3 mx-4 mt-4 rounded-xl"
     >
-      <div className="flex items-center gap-3">
+      <Link to="/" className="flex items-center gap-3">
         <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/20">
           <Flame className="w-6 h-6 text-primary" />
         </div>
         <div>
           <h1 className="text-lg font-bold tracking-tight text-foreground">
-            LPISTH <span className="text-primary">Fire Command</span>
+            Lesotho <span className="text-primary">Fire Command</span>
           </h1>
-          <p className="text-xs text-muted-foreground font-mono">
-            Lesotho Provincial Intelligent Safety Hub
+          <p className="text-[10px] text-muted-foreground font-mono">
+            National Intelligence Safety Hub
           </p>
         </div>
-      </div>
+      </Link>
 
       <nav className="hidden md:flex items-center gap-1">
-        {["Overview", "Incidents", "Resources", "Intelligence", "Coordination", "Analysis"].map(
-          (item, i) => (
-            <button
-              key={item}
+        {navItems.map((item) => {
+          const isActive = location.pathname === item.path;
+          return (
+            <Link
+              key={item.label}
+              to={item.path}
               className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
-                i === 0
+                isActive
                   ? "bg-primary/20 text-primary font-medium"
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary"
               }`}
             >
-              {item}
-            </button>
-          )
-        )}
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
 
       <div className="flex items-center gap-3">

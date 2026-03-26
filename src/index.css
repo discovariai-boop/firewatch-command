@@ -6,56 +6,65 @@
 
 @layer base {
   :root {
-    --background: 140 20% 4%;
-    --foreground: 140 10% 90%;
+    --background: 220 25% 6%;
+    --foreground: 210 20% 95%;
 
-    --card: 220 30% 8%;
-    --card-foreground: 140 10% 90%;
+    --card: 220 30% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 220 30% 8%;
-    --popover-foreground: 140 10% 90%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 347 82% 35%;
+    --primary: 0 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 140 15% 12%;
-    --secondary-foreground: 140 10% 85%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 15% 85%;
 
-    --muted: 140 10% 14%;
-    --muted-foreground: 140 8% 55%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 215 12% 55%;
 
-    --accent: 38 92% 50%;
+    --accent: 38 95% 55%;
     --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 152 60% 24%;
-    --success-foreground: 140 60% 90%;
+    --success: 145 70% 42%;
+    --success-foreground: 140 80% 95%;
 
-    --warning: 38 92% 50%;
+    --warning: 38 95% 55%;
     --warning-foreground: 0 0% 5%;
 
-    --urgent: 347 82% 45%;
+    --urgent: 0 85% 55%;
     --urgent-foreground: 0 0% 100%;
 
-    --border: 140 10% 16%;
-    --input: 140 10% 16%;
-    --ring: 347 82% 35%;
+    --info: 200 90% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --cyan: 185 80% 50%;
+    --cyan-foreground: 0 0% 5%;
+
+    --purple: 270 75% 60%;
+    --purple-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 0 85% 55%;
 
     --radius: 0.75rem;
 
-    --glass-bg: 220 40% 6% / 0.75;
-    --glass-border: 140 10% 20% / 0.3;
+    --glass-bg: 220 35% 8% / 0.8;
+    --glass-border: 220 15% 25% / 0.4;
 
-    --sidebar-background: 140 20% 5%;
-    --sidebar-foreground: 140 10% 85%;
-    --sidebar-primary: 347 82% 35%;
+    --sidebar-background: 220 25% 7%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-primary: 0 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 140 15% 12%;
-    --sidebar-accent-foreground: 140 10% 85%;
-    --sidebar-border: 140 10% 16%;
-    --sidebar-ring: 347 82% 35%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 0 85% 55%;
 
     --font-sans: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -75,26 +84,34 @@
 
 @layer components {
   .glass-card {
-    @apply rounded-xl border border-border/30 backdrop-blur-xl;
+    @apply rounded-xl border border-border/40 backdrop-blur-xl;
     background: hsla(var(--glass-bg));
   }
 
   .glass-card-urgent {
     @apply glass-card;
-    border-color: hsl(var(--urgent) / 0.4);
-    box-shadow: 0 0 30px hsl(var(--urgent) / 0.1), inset 0 1px 0 hsl(var(--urgent) / 0.05);
+    border-color: hsl(var(--urgent) / 0.5);
+    box-shadow: 0 0 30px hsl(var(--urgent) / 0.15), inset 0 1px 0 hsl(var(--urgent) / 0.08);
   }
 
   .metric-glow-red {
-    box-shadow: 0 0 40px hsl(347 82% 35% / 0.15), 0 0 80px hsl(347 82% 35% / 0.05);
+    box-shadow: 0 0 40px hsl(0 85% 55% / 0.2), 0 0 80px hsl(0 85% 55% / 0.08);
   }
 
   .metric-glow-amber {
-    box-shadow: 0 0 40px hsl(38 92% 50% / 0.15), 0 0 80px hsl(38 92% 50% / 0.05);
+    box-shadow: 0 0 40px hsl(38 95% 55% / 0.2), 0 0 80px hsl(38 95% 55% / 0.08);
   }
 
   .metric-glow-green {
-    box-shadow: 0 0 40px hsl(152 60% 24% / 0.2), 0 0 80px hsl(152 60% 24% / 0.08);
+    box-shadow: 0 0 40px hsl(145 70% 42% / 0.25), 0 0 80px hsl(145 70% 42% / 0.1);
+  }
+
+  .metric-glow-blue {
+    box-shadow: 0 0 40px hsl(200 90% 55% / 0.2), 0 0 80px hsl(200 90% 55% / 0.08);
+  }
+
+  .metric-glow-purple {
+    box-shadow: 0 0 40px hsl(270 75% 60% / 0.2), 0 0 80px hsl(270 75% 60% / 0.08);
   }
 
   .status-pulse {
