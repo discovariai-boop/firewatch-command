@@ -66,7 +66,7 @@ const FireDashboard = () => {
         {/* Footer */}
         <div className="text-center py-4">
           <p className="text-[10px] text-muted-foreground font-mono">
-            LPISTH FIRE COMMAND v2.4.1 — SECURE CHANNEL — LAST SYNC: LIVE
+            LESOTHO NATIONAL FIRE COMMAND v2.4.1 — SECURE CHANNEL — LAST SYNC: LIVE
           </p>
         </div>
       </main>
