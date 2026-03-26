@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { Flame, Clock, Truck, BedDouble, TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { mockMetrics } from "@/data/mockFireData";
+import { mockMetrics, type MetricData } from "@/data/mockFireData";
 
 const icons = [Flame, Clock, Truck, BedDouble];
 const glows = ["metric-glow-red", "metric-glow-green", "metric-glow-amber", ""];
 
-const LiveMetrics = () => {
+const LiveMetrics = ({ data }: { data?: MetricData[] }) => {
+  const metrics = data || mockMetrics;
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      {mockMetrics.map((metric, i) => {
+      {metrics.map((metric, i) => {
         const Icon = icons[i];
         const TrendIcon =
           metric.trend === "up" ? TrendingUp : metric.trend === "down" ? TrendingDown : Minus;
